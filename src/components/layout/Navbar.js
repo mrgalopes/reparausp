@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { mudaStatusGlobal } from '../../store/actions';
 import { REPARADO, PENDENTE, EM_CONSERTO } from '../../store/types';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = ({ status, mudaStatus }) => {
@@ -43,31 +44,37 @@ const Navbar = ({ status, mudaStatus }) => {
 
       <ul>
         <li>
-          <button
-            style={{ color: corTexto() }}
-            value={PENDENTE}
-            onClick={setStatus}
-          >
-            Pendentes
-          </button>
+          <Link to='/'>
+            <button
+              style={{ color: corTexto() }}
+              value={PENDENTE}
+              onClick={setStatus}
+            >
+              Pendentes
+            </button>
+          </Link>
         </li>
         <li>
-          <button
-            style={{ color: corTexto() }}
-            value={EM_CONSERTO}
-            onClick={setStatus}
-          >
-            Em Conserto
-          </button>
+          <Link to='/'>
+            <button
+              style={{ color: corTexto() }}
+              value={EM_CONSERTO}
+              onClick={setStatus}
+            >
+              Em Conserto
+            </button>
+          </Link>
         </li>
         <li>
-          <button
-            style={{ color: corTexto() }}
-            value={REPARADO}
-            onClick={setStatus}
-          >
-            Reparados
-          </button>
+          <Link to='/'>
+            <button
+              style={{ color: corTexto() }}
+              value={REPARADO}
+              onClick={setStatus}
+            >
+              Reparados
+            </button>
+          </Link>
         </li>
       </ul>
     </header>
